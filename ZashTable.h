@@ -10,7 +10,7 @@ class ZashTable {
 		T* remove(T* item);
 		bool find(T* item);
 	private:
-		static const float LOAD_FACTOR = 0.75;
+		static const float LOAD_FACTOR = 0.5;	//expand when size/capacity > LOAD_FACTOR, shrink when 2*size/capacity < LOAD_FACTOR
 		T* table;
 		int size;
 		int capacity;
