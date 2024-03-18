@@ -20,9 +20,8 @@
 class olympics_t {
 private:
 	//
-	// Here you may add anything you want
-	//
-	
+/*-use a hash table for teams
+*/	
 public:
 	// <DO-NOT-MODIFY> {
 
