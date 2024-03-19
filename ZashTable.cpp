@@ -10,11 +10,11 @@ ZashTable::~ZashTable() {
 		delete[] table;
 	}
 }
-void ZashTable::deleteList(Node* node) {
-	if(node->next != nullptr) {
-		deleteList(node->next);
+void ZashTable::deleteList(Node*  Node) {
+	if( Node->next != nullptr) {
+		deleteList( Node->next);
 	}
-	delete node;
+	delete  Node;
 }
 
 void ZashTable::insert(Team* team) {

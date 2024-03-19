@@ -3,6 +3,10 @@
 class Team {
 private:
 	int teamId;
+	int medianStrength;
+	//player stack
+	//player median heap
+	
 public:
 	Team(int teamId);
 	int getTeamId() const;
