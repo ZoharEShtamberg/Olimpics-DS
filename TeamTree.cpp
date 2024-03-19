@@ -4,7 +4,7 @@ TeamTree::~TeamTree(){
 	deleteTree(root);
 }
 void TeamTree::insert(Team* team){ 
-	root = insertUtil(root, team);
+	root = insertUtil(root, team, 0);
 }
 void TeamTree::remove(Team* team){
 	root = removeUtil(root, team);
@@ -33,17 +33,19 @@ int TeamTree::getTeamStrength(int teamId) const{
 	return getTeamStrengthUtil(root, teamId, 0);
 }
 
-void TeamTree::insertUtil(Node* head, Team* team){
+TeamTree::Node* TeamTree::insertUtil(Node* head, Team* team, int removeMedals){
 	if (head == nullptr) {
-		Node* newNode = new Node(key);
+		Node* newNode = new Node(team);
+		team->addMedals(-removeMedals); //minus sign
+		//update maxRank
 		n++; //alloc error wont change n
 		return newNode;
 	}
-	if (comp(key, head->key) == LESS) {
-		head->left = insertUtil(head->left, key);
+	if (*team < *head->team) {
+		head->left = insertUtil(head->left, team, removeMedals+head->addMedals);
 	}
-	else if (comp(key, head->key) == GREATER) {
-		head->right = insertUtil(head->right, key);
+	else if (*team > *head->team) {
+		head->right = insertUtil(head->right, team, removeMedals+head->addMedals);
 	}
 	else {
 		throw KeyAlreadyExistsException();

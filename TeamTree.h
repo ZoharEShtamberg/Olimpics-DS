@@ -30,7 +30,7 @@ private:
 	int n;
 
 	//recursive utility functions	
-	Node* insertUtil(Node* root, Team* team);
+	Node* insertUtil(Node* root, Team* team, int removeMedals);
 	Node* removeUtil(Node* root, Team* team);
 	Node* findUtil(Node* root, int teamId);
 	void deleteTree(Node* root);
