@@ -33,3 +33,6 @@ bool Team::removeLastPlayer(){
 	//update median
 	//return true if team is empty after removal
 }
+int Team::getMedals() const{
+	return medals;
+}

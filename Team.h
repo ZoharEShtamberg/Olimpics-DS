@@ -18,5 +18,6 @@ public:
 	void addPlayer(int playerStrength);
 	bool removeLastPlayer();
 	void addMedals(int medals);
+	int getMedals() const;
 };
 #endif // TEAM_H_

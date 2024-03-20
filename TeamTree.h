@@ -24,7 +24,7 @@ private:
 		int addMedals;
 		int height;
 		Node(Team* team): team(team), left(nullptr), right(nullptr),
-		 NodesInSubtree(1), maxRank(team->getStrength()), addMedals(0), height(0){};
+		 NodesInSubtree(1), maxRank(team->getStrength()+team->getMedals()), addMedals(0), height(0){};
 	};
 	Node* root;
 	int n;
@@ -39,13 +39,13 @@ private:
 	//auxiliary functions
 	int height(Node* root) const;
 	int balanceFactor(Node* root) const;
-	Node* balanceTree(Node* root, int balanceFactor);
+	Node* balanceTree(Node* root, int bf, int addMedals);
 
 	//Roll functions
-	Node* rollLeftLeft(Node* Node);
-	Node* rollLeftRight(Node* Node);
-	Node* rollRightLeft(Node* Node);
-	Node* rollRightRight(Node* Node);
+	Node* rollLeftLeft(Node* Node, int addMedals);
+	Node* rollLeftRight(Node* Node, int addMedals);
+	Node* rollRightLeft(Node* Node, int addMedals);
+	Node* rollRightRight(Node* Node, int addMedals);
 
 };
 #endif // TEAMTREE_H_
