@@ -31,7 +31,7 @@ private:
 
 	//recursive utility functions	
 	Node* insertUtil(Node* root, Team* team, int removeMedals);
-	Node* removeUtil(Node* root, Team* team);
+	Node* removeUtil(Node* root, Team* team, int addMedals);
 	Node* findUtil(Node* root, int teamId);
 	void deleteTree(Node* root);
 	int getTeamStrengthUtil(Node* root, int teamId, int addMedals) const;
@@ -40,7 +40,9 @@ private:
 	int height(Node* root) const;
 	int balanceFactor(Node* root) const;
 	Node* balanceTree(Node* root, int bf, int addMedals);
-
+	inline int getNodesInSubtree(Node* root) const;
+	inline int getMaxRank(Node* root) const;
+	inline int getAddMedals(Node* root) const;
 	//Roll functions
 	Node* rollLeftLeft(Node* Node, int addMedals);
 	Node* rollLeftRight(Node* Node, int addMedals);
