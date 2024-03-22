@@ -24,7 +24,7 @@ private:
 		int addMedals;
 		int height;
 		Node(Team* team): team(team), left(nullptr), right(nullptr),
-		 NodesInSubtree(1), maxRank(team->getStrength()+team->getMedals()), addMedals(0), height(0){};
+		 NodesInSubtree(1), maxRank(team->getStrength()+team->getMedals()), addMedals(0), height(0){};	//TODO: fix this maxrank
 	};
 	Node* root;
 	int n;

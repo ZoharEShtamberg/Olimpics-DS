@@ -59,7 +59,7 @@ TeamTree::Node* TeamTree::insertUtil(Node* head, Team* team, int removeMedals) {
 	}
 	head->height = 1 + max(height(head->left), height(head->right));
 	head->NodesInSubtree = 1 + getNodesInSubtree(head->left)+ getNodesInSubtree(head->right);
-	head->maxRank = max(head->team->getStrength(), max(getMaxRank(head->left), getMaxRank(head->right)));
+	head->maxRank = max(head->team->getStrength(), max(getMaxRank(head->left), getMaxRank(head->right))); 	//TODO: fix this maxrank
 	return balanceTree(head, balanceFactor(head), removeMedals + head->addMedals);
 }
 
@@ -86,6 +86,9 @@ TeamTree::Node* TeamTree::removeUtil(TeamTree::Node* root, Team* team, int addMe
 			}
 		
 		}
+		else{} {	//two children
+
+		}//TODO: fix this maxrank
 		root->height = 1 + max(height(root->left), height(root->right));
 		root->NodesInSubtree = 1 + getNodesInSubtree(root->left)+ getNodesInSubtree(root->right);
 		root->maxRank = max(root->team->getStrength() + root->team->getMedals(), max(getMaxRank(root->left), getMaxRank(root->right)));
@@ -133,7 +136,7 @@ TeamTree::Node* TeamTree::removeUtil(TeamTree::Node* root, Team* team, int addMe
 		newRoot->height = 1 + max(height(newRoot->left), height(newRoot->right));
 		root->NodesInSubtree = 1 + getNodesInSubtree(root->left) + getNodesInSubtree(root->right);
 		newRoot->NodesInSubtree = 1 + getNodesInSubtree(newRoot->left) + getNodesInSubtree(newRoot->right);
-		root->maxRank = max(rootRank, max(getMaxRank(root->left), getMaxRank(root->right)));
+		root->maxRank = max(rootRank, max(getMaxRank(root->left), getMaxRank(root->right)));	//TODO: fix this maxrank
 		newRoot->maxRank = max(newRootRank, max(getMaxRank(newRoot->left), getMaxRank(newRoot->right)));
 		int temp = newRoot->addMedals;
 		newRoot->addMedals += temp;
