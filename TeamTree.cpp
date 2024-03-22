@@ -84,6 +84,7 @@ TeamTree::Node* TeamTree::removeUtil(TeamTree::Node* root, Team* team, int addMe
 				temp->addMedals += getAddMedals(root);
 				root = temp;
 			}
+		
 		}
 		root->height = 1 + max(height(root->left), height(root->right));
 		root->NodesInSubtree = 1 + getNodesInSubtree(root->left)+ getNodesInSubtree(root->right);
