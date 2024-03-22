@@ -14,6 +14,7 @@ olympics_t::~olympics_t()
 StatusType olympics_t::add_team(int teamId)
 {
 	// TODO: Your code goes here
+	// insert new empty team to the ZashTable
 	return StatusType::SUCCESS;
 }
 
